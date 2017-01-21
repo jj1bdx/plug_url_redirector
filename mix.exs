@@ -29,17 +29,6 @@ defmodule PlugUrlRedirector.Mixfile do
 	 links: %{"GitHub" => "https://github.com/jj1bdx/plug_url_redirector"}]
   end
 
-  # Configuration for the OTP application
-  # to use the example server
-  # Type `mix help compile.app` for more information
-  #def application do
-  #  [mod: {ExampleRedirector, []},
-  #  applications: [:cowboy, :logger]]
-  #end
-  #
-  #defp elixirc_paths(:test), do: ["lib", "server-example", "test/support"]
-  #defp elixirc_paths(_), do: ["lib", "server-example"]
-
   def application do
     [applications: []]
   end
