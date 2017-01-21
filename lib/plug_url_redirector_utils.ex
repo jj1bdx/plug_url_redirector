@@ -2,10 +2,11 @@ defmodule PlugUrlRedirector.Utils do
   import Plug.Conn
 
   @moduledoc """
-  This module provides URL redirection functions as a Plug module.
+  This module provides the utility functions as Plug functions.
 
-  This module is derived from Phoenix.Controller module.
-  Copied under the MIT license of Phoenix Framework.
+  The functions in this module is derived from the module
+  `Phoenix.Controller` in the Phoenix Framework,
+  duplicated under the MIT license.
   """
 
   @doc """
