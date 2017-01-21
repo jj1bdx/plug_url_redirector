@@ -7,6 +7,7 @@ defmodule PlugUrlRedirector.Mixfile do
     [app: :plug_url_redirector,
      version: @version,
      elixir: "~> 1.3",
+     elixirc_paths: elixirc_paths(Mix.env),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps(),
@@ -28,13 +29,28 @@ defmodule PlugUrlRedirector.Mixfile do
 	 links: %{"GitHub" => "https://github.com/jj1bdx/plug_url_redirector"}]
   end
 
+  # Configuration for the OTP application
+  # to use the example server
+  # Type `mix help compile.app` for more information
+  #def application do
+  #  [mod: {ExampleRedirector, []},
+  #  applications: [:cowboy, :logger]]
+  #end
+  #
+  #defp elixirc_paths(:test), do: ["lib", "server-example", "test/support"]
+  #defp elixirc_paths(_), do: ["lib", "server-example"]
+
   def application do
     [applications: []]
   end
 
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_), do: ["lib"]
+
   defp deps do
     [
       {:plug, "~> 1.3"},
+      {:cowboy, "~> 1.0"},
       {:ex_doc, "~> 0.14", only: :dev},
       {:dialyxir, "~> 0.4", only: [:dev], runtime: false}
     ]
